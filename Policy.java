@@ -6,8 +6,8 @@ public class Policy {
 	private String policyholderLastName;
 	private int policyholderAge;
 	private String policyholderSmokingStatus; //"smoker" or "non-smoker"
-	private int policyholderHeight; //In inches
-	private int policyholderWeight; //In pounds
+	private double policyholderHeight; //In inches
+	private double policyholderWeight; //In pounds
 	
 	public Policy() {
 		policyNumber = 0;
@@ -21,7 +21,7 @@ public class Policy {
 	}
 	public Policy(int newPolicyNumber, String newProviderName, String newPolicyholderFirstName, 
 			String newPolicyholderLastName, int newPolicyholderAge, String newPolicyholderSmokingStatus,
-			int newPolicyholderHeight, int newPolicyholderWeight) {
+			double newPolicyholderHeight, double newPolicyholderWeight) {
 		policyNumber = newPolicyNumber;
 		providerName = newProviderName;
 		policyholderFirstName = newPolicyholderFirstName;
@@ -67,24 +67,24 @@ public class Policy {
 	public void setPolicyholderSmokingStatus(String newPolicyholderSmokingStatus) {
 		policyholderSmokingStatus = newPolicyholderSmokingStatus;
 	}
-	public int getPolicyholderHeight() {
+	public double getPolicyholderHeight() {
 		return policyholderHeight;
 	}
-	public void setPolicyholderHeight(int newPolicyholderHeight) {
+	public void setPolicyholderHeight(double newPolicyholderHeight) {
 		policyholderHeight = newPolicyholderHeight;
 	}
-	public int getPolicyholderWeight() {
+	public double getPolicyholderWeight() {
 		return policyholderWeight;
 	}
-	public void setPolicyholderWeight(int newPolicyholderWeight) {
+	public void setPolicyholderWeight(double newPolicyholderWeight) {
 		policyholderWeight = newPolicyholderWeight;
 	}
-	public int findBMI() {
-		return (policyholderWeight*703) / (policyholderHeight^2);
+	public double findBMI() {
+		return (policyholderWeight*703) / (policyholderHeight*policyholderHeight);
 	}
 	public double calculateInsurancePolicyPrice() {
-		int price = 600;
-		int BMI = findBMI();
+		double price = 600;
+		double BMI = findBMI();
 		if (policyholderAge > 50) {
 			price += 75;
 		}
