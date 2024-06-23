@@ -1,6 +1,6 @@
 public class Policy {
 	//Private variables/fields for the insurance policy
-	private int policyNumber;
+	private String policyNumber;
 	private String providerName;
 	private String policyholderFirstName;
 	private String policyholderLastName;
@@ -11,7 +11,7 @@ public class Policy {
 	
 	//No-arg constructor that initializes all private fields to 0 or an empty string
 	public Policy() {
-		policyNumber = 0;
+		policyNumber = "";
 		providerName = "";
 		policyholderFirstName = "";
 		policyholderLastName = "";
@@ -31,7 +31,7 @@ public class Policy {
 	 @param newPolicyholderHeight ~ The Policyholder's Height
 	 @param newPolicyholderWeight ~ The Policyholder's Weight
 	 */
-	public Policy(int newPolicyNumber, String newProviderName, String newPolicyholderFirstName, 
+	public Policy(String newPolicyNumber, String newProviderName, String newPolicyholderFirstName, 
 			String newPolicyholderLastName, int newPolicyholderAge, String newPolicyholderSmokingStatus,
 			double newPolicyholderHeight, double newPolicyholderWeight) {
 		policyNumber = newPolicyNumber;
@@ -46,13 +46,13 @@ public class Policy {
 	
 	/**Getter for Policy Number
 	 * @return The Policy Number */
-	public int getPolicyNumber() {
+	public String getPolicyNumber() {
 		return policyNumber;
 	}
 	
 	/**Setter for Policy Number
 	 * @param newPolicyNumber ~ The Policy Number */
-	public void setPolicyNumber(int newPolicyNumber) {
+	public void setPolicyNumber(String newPolicyNumber) {
 		policyNumber = newPolicyNumber;
 	}
 	
